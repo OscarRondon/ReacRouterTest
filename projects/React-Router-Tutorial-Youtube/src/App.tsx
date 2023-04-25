@@ -1,30 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import { Home } from './components/Home'
+import { About } from './components/About'
+import { Navbar } from './components/Navbar'
 
 function App () {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer" />
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => { setCount((count) => count + 1) }}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <header>
+        <h1>React Router Tutorial [Youtube]!!!</h1>
+        <a href='https://www.youtube.com/playlist?list=PLC3y8-rFHvwjkxt8TOteFdT_YmzwpBlrG' target='_blank' rel='noreferrer'>Youtube Play list</a>
+      </header>
+      <Navbar/>
+      <section>
+        <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path='about' element={<About/>} />
+        </Routes>
+      </section>
+      <footer/>
     </>
   )
 }
