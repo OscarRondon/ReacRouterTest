@@ -6,7 +6,8 @@ export function Navbar () {
         <ul>
             <li><NavLink to="/">Home</NavLink></li>
             <li><NavLink to="about">About</NavLink></li>
-            <li><NavLink to="Help">Help</NavLink></li>
+            <li><NavLink to="products">Products</NavLink></li>
+            <li><NavLink to="users">Users</NavLink></li>
         </ul>
     </nav>
   )
