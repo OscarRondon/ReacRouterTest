@@ -1,8 +1,14 @@
+import { useParams } from 'react-router-dom'
+
 export function UserDetails () {
+  const { userId } = useParams()
   return (
     <div>
-       <h1>UserDetails Component!!!</h1>
+      <hr />
+      <h2>UserDetails Component!!!</h2>
+      <p>Information about user with id: {userId}</p>
     </div>
 
   )
+
 }

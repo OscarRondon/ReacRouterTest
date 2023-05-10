@@ -10,6 +10,8 @@ import { ProductsTop } from './components/ProductsTop'
 import { ProductsSpecials } from './components/ProductsSpecials'
 import { ProductsMain } from './components/ProductsMain'
 import { Users } from './components/Users'
+import { UserDetails } from './components/UserDetails'
+
 
 function App () {
 
@@ -32,8 +34,9 @@ function App () {
             <Route path='topProducts' element={<ProductsTop />} />
             <Route path='specialsProducts' element={<ProductsSpecials />} />
           </Route>
-          <Route path='users' element={<Users />} />
-          <Route path='users/:userId' element={<Users />} />
+          <Route path='users' element={<Users />}>
+            <Route path=':userId' element={<UserDetails />} />
+          </Route>
           <Route path='*' element={<NoMatchUrl/>} />
         </Routes>
       </section>
