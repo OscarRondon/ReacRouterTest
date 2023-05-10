@@ -16,3 +16,4 @@ Source: https://www.youtube.com/playlist?list=PLC3y8-rFHvwjkxt8TOteFdT_YmzwpBlrG
 12- Search Params
   . useSearchParams()
 13- Relative Links
+14- Authentication and protected routes

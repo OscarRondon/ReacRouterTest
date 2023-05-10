@@ -1,7 +1,8 @@
 import './App.css'
+import React from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import { Home } from './components/Home'
-import { About } from './components/About'
+// import { About } from './components/About'
 import { Navbar } from './components/Navbar'
 import { Help } from './components/Help'
 import { NoMatchUrl } from './components/NoMatch'
@@ -11,6 +12,8 @@ import { ProductsSpecials } from './components/ProductsSpecials'
 import { ProductsMain } from './components/ProductsMain'
 import { Users } from './components/Users'
 import { UserDetails } from './components/UserDetails'
+
+const LazyAbout = React.lazy(async () => await import('./components/About'))
 
 
 function App () {
@@ -27,7 +30,7 @@ function App () {
       <section>
         <Routes>
           <Route path='/' element={<Home/>} />
-          <Route path='about' element={<About/>} />
+          <Route path='about' element={<React.Suspense fallback={<div>Loading...</div>}><LazyAbout/></React.Suspense>} />
           <Route path='help' element={<Help/>} />
           <Route path='products' element={<Product/>}>
             <Route index element={<ProductsMain />} />
